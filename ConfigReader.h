@@ -22,7 +22,6 @@ class ConfigReader
   std::vector<UInt_t> triggers;
 
   Int_t fixed_target; // boolean: 0 or 1
-  //Int_t minbias;
   Int_t epd_max_weight;
   Int_t nHits;
   Int_t nHits_dEdx;
