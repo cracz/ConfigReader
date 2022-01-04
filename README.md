@@ -1,7 +1,7 @@
 # ConfigReader
 Class used to read and store values from text files to be used in any STAR anisotropic flow analysis.
 
-To use this class in a flow analysis, first make sure you have a proper config file that it can read. Check `config_3p0GeV_example.txt` for an example. This class is designed to read in all values in an efficient way and make them each available by name so that the main analysis code still looks clean. It does this by reading the values into std::maps that take string->int or string->double and then passing the values from the maps to the corresponding member variables. Errors in reading the config files should be caught, and if anything is not caught or set, they all have a default value of -999 or -999.0.
+To use this class in a flow analysis, first make sure you have a proper config file that it can read. Check `config_3p0GeV_example.txt` for an example, but mainly just make sure you **don't use any spaces on each line** (empty lines are fine). This class is designed to read in all values in an efficient way and make them each available by name so that the main analysis code still looks clean. It does this by reading the values into std::maps that take string->int or string->double and then passing the values from the maps to the corresponding member variables. Errors in reading the config files should be caught, and if anything is not caught or set, they all have a default value of -999 or -999.0.
 
 ### Basic Instructions
 
@@ -12,7 +12,11 @@ ConfigReader configs;
 configs.read(configFileName);
 
 // If you want to abort your analysis when an error is encountered while reading:
-if (configs.errorFound()) { std::cout << "There was an error reading the configurations! Aborting analysis!" << std::endl; return 1; }
+if (configs.errorFound()) 
+  { 
+    std::cout << "There was an error reading the configurations! Aborting analysis!" << std::endl; 
+    return 1; 
+  }
 
 // Now make some kind of pseudorapidity cut, for example:
 if (eta < configs.y_mid) {...}
