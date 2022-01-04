@@ -8,7 +8,6 @@
 void ConfigReader::initialize()
 {
   intValCuts["fixed_target"] = -999;
-  //intValCuts["minbias"] = -999;
   intValCuts["epd_max_weight"] = -999;
   intValCuts["nHits"] = -999;
   intValCuts["nHits_dEdx"] = -999;
@@ -112,7 +111,6 @@ void ConfigReader::initialize()
 void ConfigReader::setAllCuts()
 {
   fixed_target = intValCuts["fixed_target"];
-  //minbias = intValCuts["minbias"];
   epd_max_weight = intValCuts["epd_max_weight"];
   nHits = intValCuts["nHits"];
   nHits_dEdx = intValCuts["nHits_dEdx"];
@@ -284,7 +282,7 @@ void ConfigReader::read(std::string fileName)
       lastKey   = key;
       lastValue = value;
 
-      // Now check if "value" is actually a list of values, if not, split it and try to save the triggers.
+      // Now check if "value" is actually a list of values, if so, split it and try to save the triggers.
       size_t commaPos = value.find(",");
 
       if (commaPos != std::string::npos && key.compare("triggers") == 0)
@@ -343,7 +341,6 @@ void ConfigReader::read(std::string fileName)
       std::getline(inputStream, line); // Get the next line
     }// End while(inputStream.good())
 
-  setAllCuts();
-
   if (errorFlag) { notifyError(); }
+  setAllCuts();
 }// End function read()
