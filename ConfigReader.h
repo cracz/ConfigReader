@@ -63,7 +63,7 @@ class ConfigReader
   Double_t m2_de_high;
   Double_t m2_tr_low;
   Double_t m2_tr_high;
-
+  /*
   Double_t yCM_pid_pi_low;
   Double_t yCM_pid_pi_high;
   Double_t yCM_flow_pi_low;
@@ -78,6 +78,13 @@ class ConfigReader
   Double_t yCM_ext_flow_ka_low;
   Double_t yCM_ext_flow_ka_high;
 
+  Double_t pt_pid_pi_low;
+  Double_t pt_pid_pi_high;
+
+  Double_t pt_pid_ka_low;
+  Double_t pt_pid_ka_high;
+
+
   Double_t yCM_pid_pr_low;
   Double_t yCM_pid_pr_high;
   Double_t yCM_flow_pr_low;
@@ -90,26 +97,6 @@ class ConfigReader
   Double_t yCM_sym_flow_pr_high;
   Double_t yCM_for_flow_pr_low;
   Double_t yCM_for_flow_pr_high;
-
-  Double_t yCM_pid_de_low;
-  Double_t yCM_pid_de_high;
-  Double_t yCM_flow_de_low;
-  Double_t yCM_flow_de_high;
-  Double_t yCM_ext_flow_de_low;
-  Double_t yCM_ext_flow_de_high;
-
-  Double_t yCM_pid_tr_low;
-  Double_t yCM_pid_tr_high;
-  Double_t yCM_flow_tr_low;
-  Double_t yCM_flow_tr_high;
-  Double_t yCM_ext_flow_tr_low;
-  Double_t yCM_ext_flow_tr_high;
-
-  Double_t pt_pid_pi_low;
-  Double_t pt_pid_pi_high;
-
-  Double_t pt_pid_ka_low;
-  Double_t pt_pid_ka_high;
 
   Double_t pt_pid_pr_low;
   Double_t pt_pid_pr_high;
@@ -124,11 +111,85 @@ class ConfigReader
   Double_t pt_for_flow_pr_low;
   Double_t pt_for_flow_pr_high;
 
+  Double_t yCM_pid_de_low;
+  Double_t yCM_pid_de_high;
+  Double_t yCM_flow_de_low;
+  Double_t yCM_flow_de_high;
+  Double_t yCM_ext_flow_de_low;
+  Double_t yCM_ext_flow_de_high;
+
   Double_t pt_pid_de_low;
   Double_t pt_pid_de_high;
 
+  Double_t yCM_pid_tr_low;
+  Double_t yCM_pid_tr_high;
+  Double_t yCM_flow_tr_low;
+  Double_t yCM_flow_tr_high;
+  Double_t yCM_ext_flow_tr_low;
+  Double_t yCM_ext_flow_tr_high;
+
   Double_t pt_pid_tr_low;
   Double_t pt_pid_tr_high;
+  */
+
+  // Pion
+  Double_t yCM_norm_pi_low;
+  Double_t yCM_norm_pi_high;
+  Double_t pt_norm_pi_low;
+  Double_t pt_norm_pi_high;
+  Double_t yCM_yExt_pi_low;
+  Double_t yCM_yExt_pi_high;
+  Double_t pt_yExt_pi_low;
+  Double_t pt_yExt_pi_high;
+
+  // Kaon
+  Double_t yCM_norm_ka_low;
+  Double_t yCM_norm_ka_high;
+  Double_t pt_norm_ka_low;
+  Double_t pt_norm_ka_high;
+  Double_t yCM_yExt_ka_low;
+  Double_t yCM_yExt_ka_high;
+  Double_t pt_yExt_ka_low;
+  Double_t pt_yExt_ka_high;
+
+  // Proton 
+  Double_t yCM_norm_pr_low;
+  Double_t yCM_norm_pr_high;
+  Double_t pt_norm_pr_low;
+  Double_t pt_norm_pr_high;
+  Double_t yCM_yDep_pr_low;
+  Double_t yCM_yDep_pr_high;
+  Double_t pt_yDep_pr_low;
+  Double_t pt_yDep_pr_high;
+  Double_t yCM_yExt_pr_low;
+  Double_t yCM_yExt_pr_high;
+  Double_t pt_yExt_pr_low;
+  Double_t pt_yExt_pr_high;
+  Double_t yCM_ySym_pr_low;
+  Double_t yCM_ySym_pr_high;
+  Double_t pt_ySym_pr_low;
+  Double_t pt_ySym_pr_high;
+  Double_t yCM_yFor_pr_low;
+  Double_t yCM_yFor_pr_high;
+  Double_t pt_yFor_pr_low;
+  Double_t pt_yFor_pr_high;
+  Double_t yCM_alt_pr_low;
+  Double_t yCM_alt_pr_high;
+  Double_t pt_alt_pr_low;
+  Double_t pt_alt_pr_high;
+
+  // Deuteron
+  Double_t yCM_norm_de_low;
+  Double_t yCM_norm_de_high;
+  Double_t pt_norm_de_low;
+  Double_t pt_norm_de_high;
+
+  // Triton
+  Double_t yCM_norm_tr_low;
+  Double_t yCM_norm_tr_high;
+  Double_t pt_norm_tr_low;
+  Double_t pt_norm_tr_high;
+
 
  private:
   bool errorFlag;
