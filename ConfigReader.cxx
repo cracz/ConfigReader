@@ -19,29 +19,35 @@ void ConfigReader::initialize()
   intValCuts["epdB_outer_row"] = -999;
 
   dblValCuts["sqrt_s_NN"] = -999.0;
+  dblValCuts["y_mid"] = -999.0; 
+
   dblValCuts["order_n"] = -999.0; 
   dblValCuts["order_m"] = -999.0; 
   dblValCuts["epd_threshold"] = -999.0; 
   dblValCuts["nHits_ratio"] = -999.0; 
   dblValCuts["dca"] = -999.0; 
+
   dblValCuts["tpc_A_low_eta"] = -999.0; 
   dblValCuts["tpc_A_high_eta"] = -999.0; 
   dblValCuts["tpc_B_low_eta"] = -999.0; 
   dblValCuts["tpc_B_high_eta"] = -999.0; 
+
   dblValCuts["r_vtx"] = -999.0; 
   dblValCuts["z_vtx_low"] = -999.0; 
   dblValCuts["z_vtx_high"] = -999.0; 
-  dblValCuts["y_mid"] = -999.0; 
+
   dblValCuts["nSig_pi_low"] = -999.0; 
   dblValCuts["nSig_pi_high"] = -999.0; 
   dblValCuts["nSig_ka_low"] = -999.0; 
   dblValCuts["nSig_ka_high"] = -999.0; 
   dblValCuts["nSig_pr_low"] = -999.0; 
   dblValCuts["nSig_pr_high"] = -999.0; 
+
   dblValCuts["z_de_low"] = -999.0; 
   dblValCuts["z_de_high"] = -999.0; 
   dblValCuts["z_tr_low"] = -999.0; 
   dblValCuts["z_tr_high"] = -999.0; 
+
   dblValCuts["m2_pi_low"] = -999.0; 
   dblValCuts["m2_pi_high"] = -999.0; 
   dblValCuts["m2_ka_low"] = -999.0; 
@@ -50,62 +56,59 @@ void ConfigReader::initialize()
   dblValCuts["m2_de_high"] = -999.0; 
   dblValCuts["m2_tr_low"] = -999.0; 
   dblValCuts["m2_tr_high"] = -999.0; 
-  dblValCuts["yCM_pid_pi_low"] = -999.0;
-  dblValCuts["yCM_pid_pi_high"] = -999.0;
-  dblValCuts["yCM_flow_pi_low"] = -999.0;
-  dblValCuts["yCM_flow_pi_high"] = -999.0;
-  dblValCuts["yCM_ext_flow_pi_low"] = -999.0;
-  dblValCuts["yCM_ext_flow_pi_high"] = -999.0;
-  dblValCuts["yCM_pid_de_low"] = -999.0;
-  dblValCuts["yCM_pid_de_high"] = -999.0;
-  dblValCuts["yCM_flow_de_low"] = -999.0;
-  dblValCuts["yCM_flow_de_high"] = -999.0;
-  dblValCuts["yCM_ext_flow_de_low"] = -999.0;
-  dblValCuts["yCM_ext_flow_de_high"] = -999.0;
-  dblValCuts["yCM_pid_tr_low"] = -999.0;
-  dblValCuts["yCM_pid_tr_high"] = -999.0;
-  dblValCuts["yCM_flow_tr_low"] = -999.0;
-  dblValCuts["yCM_flow_tr_high"] = -999.0;
-  dblValCuts["yCM_ext_flow_tr_low"] = -999.0;
-  dblValCuts["yCM_ext_flow_tr_high"] = -999.0;
-  dblValCuts["yCM_pid_ka_low"] = -999.0;
-  dblValCuts["yCM_pid_ka_high"] = -999.0;
-  dblValCuts["yCM_flow_ka_low"] = -999.0;
-  dblValCuts["yCM_flow_ka_high"] = -999.0;
-  dblValCuts["yCM_ext_flow_ka_low"] = -999.0;
-  dblValCuts["yCM_ext_flow_ka_high"] = -999.0;
-  dblValCuts["yCM_pid_pr_low"] = -999.0;
-  dblValCuts["yCM_pid_pr_high"] = -999.0;
-  dblValCuts["yCM_flow_pr_low"] = -999.0;
-  dblValCuts["yCM_flow_pr_high"] = -999.0;
-  dblValCuts["yCM_dep_flow_pr_low"] = -999.0;
-  dblValCuts["yCM_dep_flow_pr_high"] = -999.0;
-  dblValCuts["yCM_ext_flow_pr_low"] = -999.0;
-  dblValCuts["yCM_ext_flow_pr_high"] = -999.0;
-  dblValCuts["yCM_sym_flow_pr_low"] = -999.0;
-  dblValCuts["yCM_sym_flow_pr_high"] = -999.0;
-  dblValCuts["yCM_for_flow_pr_low"] = -999.0;
-  dblValCuts["yCM_for_flow_pr_high"] = -999.0;
-  dblValCuts["pt_pid_pi_low"] = -999.0; 
-  dblValCuts["pt_pid_pi_high"] = -999.0; 
-  dblValCuts["pt_pid_ka_low"] = -999.0; 
-  dblValCuts["pt_pid_ka_high"] = -999.0; 
-  dblValCuts["pt_pid_pr_low"] = -999.0; 
-  dblValCuts["pt_pid_pr_high"] = -999.0; 
-  dblValCuts["pt_flow_pr_low"] = -999.0; 
-  dblValCuts["pt_flow_pr_high"] = -999.0; 
-  dblValCuts["pt_ydep_flow_pr_low"] = -999.0;
-  dblValCuts["pt_ydep_flow_pr_high"] = -999.0;
-  dblValCuts["pt_ext_flow_pr_low"] = -999.0;
-  dblValCuts["pt_ext_flow_pr_high"] = -999.0;
-  dblValCuts["pt_sym_flow_pr_low"] = -999.0;
-  dblValCuts["pt_sym_flow_pr_high"] = -999.0;
-  dblValCuts["pt_for_flow_pr_low"] = -999.0;
-  dblValCuts["pt_for_flow_pr_high"] = -999.0;
-  dblValCuts["pt_pid_de_low"] = -999.0; 
-  dblValCuts["pt_pid_de_high"] = -999.0; 
-  dblValCuts["pt_pid_tr_low"] = -999.0; 
-  dblValCuts["pt_pid_tr_high"] = -999.0; 
+
+  dblValCuts["yCM_norm_pi_low"] = -999.0;
+  dblValCuts["yCM_norm_pi_high"] = -999.0;
+  dblValCuts["pt_norm_pi_low"] = -999.0; 
+  dblValCuts["pt_norm_pi_high"] = -999.0; 
+  dblValCuts["yCM_yExt_pi_low"] = -999.0;
+  dblValCuts["yCM_yExt_pi_high"] = -999.0;
+  dblValCuts["pt_yExt_pi_low"] = -999.0;
+  dblValCuts["pt_yExt_pi_high"] = -999.0;
+
+  dblValCuts["yCM_norm_ka_low"] = -999.0;
+  dblValCuts["yCM_norm_ka_high"] = -999.0;
+  dblValCuts["pt_norm_ka_low"] = -999.0; 
+  dblValCuts["pt_norm_ka_high"] = -999.0; 
+  dblValCuts["yCM_yExt_ka_low"] = -999.0;
+  dblValCuts["yCM_yExt_ka_high"] = -999.0;
+  dblValCuts["pt_yExt_ka_low"] = -999.0;
+  dblValCuts["pt_yExt_ka_high"] = -999.0;
+
+  dblValCuts["yCM_norm_pr_low"] = -999.0;
+  dblValCuts["yCM_norm_pr_high"] = -999.0;
+  dblValCuts["pt_norm_pr_low"] = -999.0; 
+  dblValCuts["pt_norm_pr_high"] = -999.0; 
+  dblValCuts["yCM_yDep_pr_low"] = -999.0;
+  dblValCuts["yCM_yDep_pr_high"] = -999.0;
+  dblValCuts["pt_yDep_pr_low"] = -999.0; 
+  dblValCuts["pt_yDep_pr_high"] = -999.0; 
+  dblValCuts["yCM_yExt_pr_low"] = -999.0;
+  dblValCuts["yCM_yExt_pr_high"] = -999.0;
+  dblValCuts["pt_yExt_pr_low"] = -999.0;
+  dblValCuts["pt_yExt_pr_high"] = -999.0;
+  dblValCuts["yCM_ySym_pr_low"] = -999.0;
+  dblValCuts["yCM_ySym_pr_high"] = -999.0;
+  dblValCuts["pt_ySym_pr_low"] = -999.0;
+  dblValCuts["pt_ySym_pr_high"] = -999.0;
+  dblValCuts["yCM_yFor_pr_low"] = -999.0;
+  dblValCuts["yCM_yFor_pr_high"] = -999.0;
+  dblValCuts["pt_yFor_pr_low"] = -999.0;
+  dblValCuts["pt_yFor_pr_high"] = -999.0;
+  dblValCuts["yCM_alt_pr_low"] = -999.0;
+  dblValCuts["yCM_alt_pr_high"] = -999.0;
+  dblValCuts["pt_alt_pr_low"] = -999.0;
+  dblValCuts["pt_alt_pr_high"] = -999.0;
+
+  dblValCuts["yCM_norm_de_low"] = -999.0;
+  dblValCuts["yCM_norm_de_high"] = -999.0;
+  dblValCuts["pt_norm_de_low"] = -999.0; 
+  dblValCuts["pt_norm_de_high"] = -999.0; 
+
+  dblValCuts["yCM_norm_tr_low"] = -999.0;
+  dblValCuts["yCM_norm_tr_high"] = -999.0;
+  dblValCuts["pt_norm_tr_low"] = -999.0; 
+  dblValCuts["pt_norm_tr_high"] = -999.0; 
 }
 
 void ConfigReader::setAllCuts()
@@ -124,27 +127,33 @@ void ConfigReader::setAllCuts()
   sqrt_s_NN = dblValCuts["sqrt_s_NN"];
   order_n = dblValCuts["order_n"]; 
   order_m = dblValCuts["order_m"]; 
+  y_mid = dblValCuts["y_mid"]; 
+
   epd_threshold = dblValCuts["epd_threshold"]; 
   nHits_ratio = dblValCuts["nHits_ratio"]; 
   dca = dblValCuts["dca"]; 
+
   tpc_A_low_eta = dblValCuts["tpc_A_low_eta"]; 
   tpc_A_high_eta = dblValCuts["tpc_A_high_eta"]; 
   tpc_B_low_eta = dblValCuts["tpc_B_low_eta"]; 
   tpc_B_high_eta = dblValCuts["tpc_B_high_eta"]; 
+
   r_vtx = dblValCuts["r_vtx"]; 
   z_vtx_low = dblValCuts["z_vtx_low"]; 
   z_vtx_high = dblValCuts["z_vtx_high"]; 
-  y_mid = dblValCuts["y_mid"]; 
+
   nSig_pi_low = dblValCuts["nSig_pi_low"]; 
   nSig_pi_high = dblValCuts["nSig_pi_high"]; 
   nSig_ka_low = dblValCuts["nSig_ka_low"]; 
   nSig_ka_high = dblValCuts["nSig_ka_high"]; 
   nSig_pr_low = dblValCuts["nSig_pr_low"]; 
   nSig_pr_high = dblValCuts["nSig_pr_high"]; 
+
   z_de_low = dblValCuts["z_de_low"]; 
   z_de_high = dblValCuts["z_de_high"]; 
   z_tr_low = dblValCuts["z_tr_low"]; 
   z_tr_high = dblValCuts["z_tr_high"]; 
+
   m2_pi_low = dblValCuts["m2_pi_low"]; 
   m2_pi_high = dblValCuts["m2_pi_high"]; 
   m2_ka_low = dblValCuts["m2_ka_low"]; 
@@ -153,62 +162,61 @@ void ConfigReader::setAllCuts()
   m2_de_high = dblValCuts["m2_de_high"]; 
   m2_tr_low = dblValCuts["m2_tr_low"]; 
   m2_tr_high = dblValCuts["m2_tr_high"]; 
-  yCM_pid_pi_low = dblValCuts["yCM_pid_pi_low"];
-  yCM_pid_pi_high = dblValCuts["yCM_pid_pi_high"];
-  yCM_flow_pi_low = dblValCuts["yCM_flow_pi_low"];
-  yCM_flow_pi_high = dblValCuts["yCM_flow_pi_high"];
-  yCM_ext_flow_pi_low = dblValCuts["yCM_ext_flow_pi_low"];
-  yCM_ext_flow_pi_high = dblValCuts["yCM_ext_flow_pi_high"];
-  yCM_pid_de_low = dblValCuts["yCM_pid_de_low"];
-  yCM_pid_de_high = dblValCuts["yCM_pid_de_high"];
-  yCM_flow_de_low = dblValCuts["yCM_flow_de_low"];
-  yCM_flow_de_high = dblValCuts["yCM_flow_de_high"];
-  yCM_ext_flow_de_low = dblValCuts["yCM_ext_flow_de_low"];
-  yCM_ext_flow_de_high = dblValCuts["yCM_ext_flow_de_high"];
-  yCM_pid_tr_low = dblValCuts["yCM_pid_tr_low"];
-  yCM_pid_tr_high = dblValCuts["yCM_pid_tr_high"];
-  yCM_flow_tr_low = dblValCuts["yCM_flow_tr_low"];
-  yCM_flow_tr_high = dblValCuts["yCM_flow_tr_high"];
-  yCM_ext_flow_tr_low = dblValCuts["yCM_ext_flow_tr_low"];
-  yCM_ext_flow_tr_high = dblValCuts["yCM_ext_flow_tr_high"];
-  yCM_pid_ka_low = dblValCuts["yCM_pid_ka_low"];
-  yCM_pid_ka_high = dblValCuts["yCM_pid_ka_high"];
-  yCM_flow_ka_low = dblValCuts["yCM_flow_ka_low"];
-  yCM_flow_ka_high = dblValCuts["yCM_flow_ka_high"];
-  yCM_ext_flow_ka_low = dblValCuts["yCM_ext_flow_ka_low"];
-  yCM_ext_flow_ka_high = dblValCuts["yCM_ext_flow_ka_high"];
-  yCM_pid_pr_low = dblValCuts["yCM_pid_pr_low"];
-  yCM_pid_pr_high = dblValCuts["yCM_pid_pr_high"];
-  yCM_flow_pr_low = dblValCuts["yCM_flow_pr_low"];
-  yCM_flow_pr_high = dblValCuts["yCM_flow_pr_high"];
-  yCM_dep_flow_pr_low = dblValCuts["yCM_dep_flow_pr_low"];
-  yCM_dep_flow_pr_high = dblValCuts["yCM_dep_flow_pr_high"];
-  yCM_ext_flow_pr_low = dblValCuts["yCM_ext_flow_pr_low"];
-  yCM_ext_flow_pr_high = dblValCuts["yCM_ext_flow_pr_high"];
-  yCM_sym_flow_pr_low = dblValCuts["yCM_sym_flow_pr_low"];
-  yCM_sym_flow_pr_high = dblValCuts["yCM_sym_flow_pr_high"];
-  yCM_for_flow_pr_low = dblValCuts["yCM_for_flow_pr_low"];
-  yCM_for_flow_pr_high = dblValCuts["yCM_for_flow_pr_high"];
-  pt_pid_pi_low = dblValCuts["pt_pid_pi_low"]; 
-  pt_pid_pi_high = dblValCuts["pt_pid_pi_high"]; 
-  pt_pid_ka_low = dblValCuts["pt_pid_ka_low"]; 
-  pt_pid_ka_high = dblValCuts["pt_pid_ka_high"]; 
-  pt_pid_pr_low = dblValCuts["pt_pid_pr_low"]; 
-  pt_pid_pr_high = dblValCuts["pt_pid_pr_high"]; 
-  pt_flow_pr_low = dblValCuts["pt_flow_pr_low"]; 
-  pt_flow_pr_high = dblValCuts["pt_flow_pr_high"]; 
-  pt_ydep_flow_pr_low = dblValCuts["pt_ydep_flow_pr_low"];
-  pt_ydep_flow_pr_high = dblValCuts["pt_ydep_flow_pr_high"];
-  pt_ext_flow_pr_low = dblValCuts["pt_ext_flow_pr_low"];
-  pt_ext_flow_pr_high = dblValCuts["pt_ext_flow_pr_high"];
-  pt_sym_flow_pr_low = dblValCuts["pt_sym_flow_pr_low"];
-  pt_sym_flow_pr_high = dblValCuts["pt_sym_flow_pr_high"];
-  pt_for_flow_pr_low = dblValCuts["pt_for_flow_pr_low"];
-  pt_for_flow_pr_high = dblValCuts["pt_for_flow_pr_high"];
-  pt_pid_de_low = dblValCuts["pt_pid_de_low"]; 
-  pt_pid_de_high = dblValCuts["pt_pid_de_high"]; 
-  pt_pid_tr_low = dblValCuts["pt_pid_tr_low"]; 
-  pt_pid_tr_high = dblValCuts["pt_pid_tr_high"]; 
+
+  yCM_norm_pi_low = dblValCuts["yCM_norm_pi_low"];
+  yCM_norm_pi_high = dblValCuts["yCM_norm_pi_high"];
+  pt_norm_pi_low = dblValCuts["pt_norm_pi_low"]; 
+  pt_norm_pi_high = dblValCuts["pt_norm_pi_high"]; 
+  yCM_yExt_pi_low = dblValCuts["yCM_yExt_pi_low"];
+  yCM_yExt_pi_high = dblValCuts["yCM_yExt_pi_high"];
+  pt_yExt_pi_low = dblValCuts["pt_yExt_pi_low"];
+  pt_yExt_pi_high = dblValCuts["pt_yExt_pi_high"];
+
+  yCM_norm_ka_low = dblValCuts["yCM_norm_ka_low"];
+  yCM_norm_ka_high = dblValCuts["yCM_norm_ka_high"];
+  pt_norm_ka_low = dblValCuts["pt_norm_ka_low"]; 
+  pt_norm_ka_high = dblValCuts["pt_norm_ka_high"]; 
+  yCM_yExt_ka_low = dblValCuts["yCM_yExt_ka_low"];
+  yCM_yExt_ka_high = dblValCuts["yCM_yExt_ka_high"];
+  pt_yExt_ka_low = dblValCuts["pt_yExt_ka_low"];
+  pt_yExt_ka_high = dblValCuts["pt_yExt_ka_high"];
+
+  yCM_norm_pr_low = dblValCuts["yCM_norm_pr_low"];
+  yCM_norm_pr_high = dblValCuts["yCM_norm_pr_high"];
+  pt_norm_pr_low = dblValCuts["pt_norm_pr_low"]; 
+  pt_norm_pr_high = dblValCuts["pt_norm_pr_high"]; 
+  yCM_yDep_pr_low = dblValCuts["yCM_yDep_pr_low"];
+  yCM_yDep_pr_high = dblValCuts["yCM_yDep_pr_high"];
+  pt_yDep_pr_low = dblValCuts["pt_yDep_pr_low"]; 
+  pt_yDep_pr_high = dblValCuts["pt_yDep_pr_high"]; 
+  yCM_yExt_pr_low = dblValCuts["yCM_yExt_pr_low"];
+  yCM_yExt_pr_high = dblValCuts["yCM_yExt_pr_high"];
+  pt_yExt_pr_low = dblValCuts["pt_yExt_pr_low"];
+  pt_yExt_pr_high = dblValCuts["pt_yExt_pr_high"];
+  yCM_ySym_pr_low = dblValCuts["yCM_ySym_pr_low"];
+  yCM_ySym_pr_high = dblValCuts["yCM_ySym_pr_high"];
+  pt_ySym_pr_low = dblValCuts["pt_ySym_pr_low"];
+  pt_ySym_pr_high = dblValCuts["pt_ySym_pr_high"];
+  yCM_yFor_pr_low = dblValCuts["yCM_yFor_pr_low"];
+  yCM_yFor_pr_high = dblValCuts["yCM_yFor_pr_high"];
+  pt_yFor_pr_low = dblValCuts["pt_yFor_pr_low"];
+  pt_yFor_pr_high = dblValCuts["pt_yFor_pr_high"];
+  yCM_alt_pr_low = dblValCuts["yCM_alt_pr_low"];
+  yCM_alt_pr_high = dblValCuts["yCM_alt_pr_high"];
+  pt_alt_pr_low = dblValCuts["pt_alt_pr_low"];
+  pt_alt_pr_high = dblValCuts["pt_alt_pr_high"];
+
+
+  yCM_norm_de_low = dblValCuts["yCM_norm_de_low"];
+  yCM_norm_de_high = dblValCuts["yCM_norm_de_high"];
+  pt_norm_de_low = dblValCuts["pt_norm_de_low"]; 
+  pt_norm_de_high = dblValCuts["pt_norm_de_high"]; 
+
+  yCM_norm_tr_low = dblValCuts["yCM_norm_tr_low"];
+  yCM_norm_tr_high = dblValCuts["yCM_norm_tr_high"];
+  pt_norm_tr_low = dblValCuts["pt_norm_tr_low"]; 
+  pt_norm_tr_high = dblValCuts["pt_norm_tr_high"]; 
+
 }
 
 ConfigReader::ConfigReader() 
