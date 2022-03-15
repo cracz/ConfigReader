@@ -11,6 +11,8 @@ void ConfigReader::initialize()
   intValCuts["epd_max_weight"] = -999;
   intValCuts["nHits"] = -999;
   intValCuts["nHits_dEdx"] = -999;
+  intValCuts["m_nHits"] = -999;
+  intValCuts["m_nHits_dEdx"] = -999;
   intValCuts["min_tracks"] = -999;
   intValCuts["shift_terms"] = -999;
   intValCuts["epdA_inner_row"] = -999;
@@ -26,6 +28,8 @@ void ConfigReader::initialize()
   dblValCuts["epd_threshold"] = -999.0; 
   dblValCuts["nHits_ratio"] = -999.0; 
   dblValCuts["dca"] = -999.0; 
+  dblValCuts["m_nHits_ratio"] = -999.0; 
+  dblValCuts["m_dca"] = -999.0; 
 
   dblValCuts["tpc_A_low_eta"] = -999.0; 
   dblValCuts["tpc_A_high_eta"] = -999.0; 
@@ -35,6 +39,9 @@ void ConfigReader::initialize()
   dblValCuts["r_vtx"] = -999.0; 
   dblValCuts["z_vtx_low"] = -999.0; 
   dblValCuts["z_vtx_high"] = -999.0; 
+  dblValCuts["m_r_vtx"] = -999.0; 
+  dblValCuts["m_z_vtx_low"] = -999.0; 
+  dblValCuts["m_z_vtx_high"] = -999.0; 
 
   dblValCuts["nSig_pi_low"] = -999.0; 
   dblValCuts["nSig_pi_high"] = -999.0; 
@@ -117,6 +124,8 @@ void ConfigReader::setAllCuts()
   epd_max_weight = intValCuts["epd_max_weight"];
   nHits = intValCuts["nHits"];
   nHits_dEdx = intValCuts["nHits_dEdx"];
+  m_nHits = intValCuts["m_nHits"];
+  m_nHits_dEdx = intValCuts["m_nHits_dEdx"];
   min_tracks = intValCuts["min_tracks"];
   shift_terms = intValCuts["shift_terms"];
   epdA_inner_row = intValCuts["epdA_inner_row"];
@@ -132,6 +141,8 @@ void ConfigReader::setAllCuts()
   epd_threshold = dblValCuts["epd_threshold"]; 
   nHits_ratio = dblValCuts["nHits_ratio"]; 
   dca = dblValCuts["dca"]; 
+  m_nHits_ratio = dblValCuts["m_nHits_ratio"]; 
+  m_dca = dblValCuts["m_dca"]; 
 
   tpc_A_low_eta = dblValCuts["tpc_A_low_eta"]; 
   tpc_A_high_eta = dblValCuts["tpc_A_high_eta"]; 
@@ -141,6 +152,9 @@ void ConfigReader::setAllCuts()
   r_vtx = dblValCuts["r_vtx"]; 
   z_vtx_low = dblValCuts["z_vtx_low"]; 
   z_vtx_high = dblValCuts["z_vtx_high"]; 
+  m_r_vtx = dblValCuts["m_r_vtx"]; 
+  m_z_vtx_low = dblValCuts["m_z_vtx_low"]; 
+  m_z_vtx_high = dblValCuts["m_z_vtx_high"]; 
 
   nSig_pi_low = dblValCuts["nSig_pi_low"]; 
   nSig_pi_high = dblValCuts["nSig_pi_high"]; 

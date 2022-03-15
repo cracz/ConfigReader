@@ -25,6 +25,8 @@ class ConfigReader
   Int_t epd_max_weight;
   Int_t nHits;
   Int_t nHits_dEdx;
+  Int_t m_nHits;
+  Int_t m_nHits_dEdx;
   Int_t min_tracks;
   Int_t shift_terms;
   Int_t epdA_inner_row;
@@ -37,6 +39,8 @@ class ConfigReader
   Double_t epd_threshold;
   Double_t nHits_ratio;
   Double_t dca;
+  Double_t m_nHits_ratio;
+  Double_t m_dca;
   Double_t tpc_A_low_eta;
   Double_t tpc_A_high_eta;
   Double_t tpc_B_low_eta;
@@ -44,6 +48,9 @@ class ConfigReader
   Double_t r_vtx;
   Double_t z_vtx_low;
   Double_t z_vtx_high;
+  Double_t m_r_vtx;
+  Double_t m_z_vtx_low;
+  Double_t m_z_vtx_high;
   Double_t y_mid;
   Double_t nSig_pi_low;
   Double_t nSig_pi_high;
