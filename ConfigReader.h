@@ -70,74 +70,6 @@ class ConfigReader
   Double_t m2_de_high;
   Double_t m2_tr_low;
   Double_t m2_tr_high;
-  /*
-  Double_t yCM_pid_pi_low;
-  Double_t yCM_pid_pi_high;
-  Double_t yCM_flow_pi_low;
-  Double_t yCM_flow_pi_high;
-  Double_t yCM_ext_flow_pi_low;
-  Double_t yCM_ext_flow_pi_high;
-
-  Double_t yCM_pid_ka_low;
-  Double_t yCM_pid_ka_high;
-  Double_t yCM_flow_ka_low;
-  Double_t yCM_flow_ka_high;
-  Double_t yCM_ext_flow_ka_low;
-  Double_t yCM_ext_flow_ka_high;
-
-  Double_t pt_pid_pi_low;
-  Double_t pt_pid_pi_high;
-
-  Double_t pt_pid_ka_low;
-  Double_t pt_pid_ka_high;
-
-
-  Double_t yCM_pid_pr_low;
-  Double_t yCM_pid_pr_high;
-  Double_t yCM_flow_pr_low;
-  Double_t yCM_flow_pr_high;
-  Double_t yCM_dep_flow_pr_low;
-  Double_t yCM_dep_flow_pr_high;
-  Double_t yCM_ext_flow_pr_low;
-  Double_t yCM_ext_flow_pr_high;
-  Double_t yCM_sym_flow_pr_low;
-  Double_t yCM_sym_flow_pr_high;
-  Double_t yCM_for_flow_pr_low;
-  Double_t yCM_for_flow_pr_high;
-
-  Double_t pt_pid_pr_low;
-  Double_t pt_pid_pr_high;
-  Double_t pt_flow_pr_low;
-  Double_t pt_flow_pr_high;
-  Double_t pt_ydep_flow_pr_low;
-  Double_t pt_ydep_flow_pr_high;
-  Double_t pt_ext_flow_pr_low;
-  Double_t pt_ext_flow_pr_high;
-  Double_t pt_sym_flow_pr_low;
-  Double_t pt_sym_flow_pr_high;
-  Double_t pt_for_flow_pr_low;
-  Double_t pt_for_flow_pr_high;
-
-  Double_t yCM_pid_de_low;
-  Double_t yCM_pid_de_high;
-  Double_t yCM_flow_de_low;
-  Double_t yCM_flow_de_high;
-  Double_t yCM_ext_flow_de_low;
-  Double_t yCM_ext_flow_de_high;
-
-  Double_t pt_pid_de_low;
-  Double_t pt_pid_de_high;
-
-  Double_t yCM_pid_tr_low;
-  Double_t yCM_pid_tr_high;
-  Double_t yCM_flow_tr_low;
-  Double_t yCM_flow_tr_high;
-  Double_t yCM_ext_flow_tr_low;
-  Double_t yCM_ext_flow_tr_high;
-
-  Double_t pt_pid_tr_low;
-  Double_t pt_pid_tr_high;
-  */
 
   // Pion
   Double_t yCM_norm_pi_low;
@@ -197,6 +129,9 @@ class ConfigReader
   Double_t pt_norm_tr_low;
   Double_t pt_norm_tr_high;
 
+  // Proton, Deuteron, and Triton
+  Double_t KT_pdt_low;
+  Double_t KT_pdt_high;
 
  private:
   bool errorFlag;

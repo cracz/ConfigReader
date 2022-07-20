@@ -116,6 +116,9 @@ void ConfigReader::initialize()
   dblValCuts["yCM_norm_tr_high"] = -999.0;
   dblValCuts["pt_norm_tr_low"] = -999.0; 
   dblValCuts["pt_norm_tr_high"] = -999.0; 
+
+  dblValCuts["KT_pdt_low"] = -999.0;
+  dblValCuts["KT_pdt_high"] = -999.0;
 }
 
 void ConfigReader::setAllCuts()
@@ -231,6 +234,8 @@ void ConfigReader::setAllCuts()
   pt_norm_tr_low = dblValCuts["pt_norm_tr_low"]; 
   pt_norm_tr_high = dblValCuts["pt_norm_tr_high"]; 
 
+  KT_pdt_low = dblValCuts["KT_pdt_low"];
+  KT_pdt_high = dblValCuts["KT_pdt_high"];
 }
 
 ConfigReader::ConfigReader() 
