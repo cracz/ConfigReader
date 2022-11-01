@@ -22,6 +22,7 @@ void ConfigReader::initialize()
 
   dblValCuts["sqrt_s_NN"] = -999.0;
   dblValCuts["y_mid"] = -999.0; 
+  dblValCuts["y_beam"] = -999.0; 
 
   dblValCuts["order_n"] = -999.0; 
   dblValCuts["order_m"] = -999.0; 
@@ -140,6 +141,7 @@ void ConfigReader::setAllCuts()
   order_n = dblValCuts["order_n"]; 
   order_m = dblValCuts["order_m"]; 
   y_mid = dblValCuts["y_mid"]; 
+  y_beam = dblValCuts["y_beam"];   
 
   epd_threshold = dblValCuts["epd_threshold"]; 
   nHits_ratio = dblValCuts["nHits_ratio"]; 
@@ -371,3 +373,26 @@ void ConfigReader::read(std::string fileName)
   if (errorFlag) { notifyError(); }
   setAllCuts();
 }// End function read()
+
+
+void ConfigReader::printAll()
+{
+  std::map<std::string, int>::iterator intIt;
+  std::map<std::string, double>::iterator dblIt;
+
+  for (intIt = intValCuts.begin(); intIt != intValCuts.end(); intIt++)
+    {
+      std::cout << intIt->first    // string (key)
+		<< ':'
+		<< intIt->second   // string's value 
+		<< std::endl;
+    }
+
+  for (dblIt = dblValCuts.begin(); dblIt != dblValCuts.end(); dblIt++)
+    {
+      std::cout << dblIt->first    // string (key)
+		<< ':'
+		<< dblIt->second   // string's value 
+		<< std::endl;
+    }
+}// End function printAll()

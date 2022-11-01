@@ -17,6 +17,7 @@ class ConfigReader
   void initialize();
   void setAllCuts();
   void read(std::string fileName);
+  void printAll();
   Bool_t triggersMatch(UInt_t readTrigger);
 
   std::vector<UInt_t> triggers;
@@ -52,6 +53,7 @@ class ConfigReader
   Double_t m_z_vtx_low;
   Double_t m_z_vtx_high;
   Double_t y_mid;
+  Double_t y_beam;
   Double_t nSig_pi_low;
   Double_t nSig_pi_high;
   Double_t nSig_ka_low;
