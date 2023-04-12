@@ -18,6 +18,7 @@ class ConfigReader
   void setAllCuts();
   void read(std::string fileName);
   void printAll();
+  void checkForNonSetKeys();
   Bool_t triggersMatch(UInt_t readTrigger);
 
   std::vector<UInt_t> triggers;

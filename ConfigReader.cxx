@@ -4,122 +4,126 @@
 #include <stdexcept>
 #include "ConfigReader.h"
 
-// I have to initialize the maps like this because c++98 sucks (or maybe just the CINT does)
+// ConfigReader must be compiled using the flag -std=c++11 due to the 
+//manner in which the two maps are initialized below.
 void ConfigReader::initialize()
 {
-  intValCuts["fixed_target"] = -999;
-  intValCuts["epd_max_weight"] = -999;
-  intValCuts["nHits"] = -999;
-  intValCuts["nHits_dEdx"] = -999;
-  intValCuts["m_nHits"] = -999;
-  intValCuts["m_nHits_dEdx"] = -999;
-  intValCuts["min_tracks"] = -999;
-  intValCuts["shift_terms"] = -999;
-  intValCuts["epdA_inner_row"] = -999;
-  intValCuts["epdA_outer_row"] = -999;
-  intValCuts["epdB_inner_row"] = -999;
-  intValCuts["epdB_outer_row"] = -999;
+  intValCuts = {{"fixed_target",   -999},
+		{"epd_max_weight", -999},
+		{"nHits",          -999},
+		{"nHits_dEdx",     -999},
+		{"m_nHits",        -999},
+		{"m_nHits_dEdx",   -999},
+		{"min_tracks",     -999},
+		{"shift_terms",    -999},
+		{"epdA_inner_row", -999},
+		{"epdA_outer_row", -999},
+		{"epdB_inner_row", -999},
+		{"epdB_outer_row", -999}};
 
-  dblValCuts["sqrt_s_NN"] = -999.0;
-  dblValCuts["y_mid"] = -999.0; 
-  dblValCuts["y_beam"] = -999.0; 
 
-  dblValCuts["order_n"] = -999.0; 
-  dblValCuts["order_m"] = -999.0; 
-  dblValCuts["epd_threshold"] = -999.0; 
-  dblValCuts["nHits_ratio"] = -999.0; 
-  dblValCuts["dca"] = -999.0; 
-  dblValCuts["m_nHits_ratio"] = -999.0; 
-  dblValCuts["m_dca"] = -999.0; 
+  dblValCuts = {{"sqrt_s_NN",     -999.0},
+		{"y_mid",         -999.0},
+		{"y_beam",        -999.0},
+		{"order_n",       -999.0},
+		{"order_m",       -999.0},
+		{"epd_threshold", -999.0},
 
-  dblValCuts["tpc_A_low_eta"] = -999.0; 
-  dblValCuts["tpc_A_high_eta"] = -999.0; 
-  dblValCuts["tpc_B_low_eta"] = -999.0; 
-  dblValCuts["tpc_B_high_eta"] = -999.0; 
+		{"nHits_ratio",   -999.0},
+		{"dca",           -999.0},
+		{"m_nHits_ratio", -999.0},
+		{"m_dca",         -999.0},
 
-  dblValCuts["r_vtx"] = -999.0; 
-  dblValCuts["z_vtx_low"] = -999.0; 
-  dblValCuts["z_vtx_high"] = -999.0; 
-  dblValCuts["m_r_vtx"] = -999.0; 
-  dblValCuts["m_z_vtx_low"] = -999.0; 
-  dblValCuts["m_z_vtx_high"] = -999.0; 
+		{"r_vtx",        -999.0},
+		{"z_vtx_low",    -999.0},
+		{"z_vtx_high",   -999.0},
+		{"m_r_vtx",      -999.0},
+		{"m_z_vtx_low",  -999.0},
+		{"m_z_vtx_high", -999.0},
 
-  dblValCuts["nSig_pi_low"] = -999.0; 
-  dblValCuts["nSig_pi_high"] = -999.0; 
-  dblValCuts["nSig_ka_low"] = -999.0; 
-  dblValCuts["nSig_ka_high"] = -999.0; 
-  dblValCuts["nSig_pr_low"] = -999.0; 
-  dblValCuts["nSig_pr_high"] = -999.0; 
+		{"tpc_A_low_eta",  -999.0},
+		{"tpc_A_high_eta", -999.0},
+		{"tpc_B_low_eta",  -999.0},
+		{"tpc_B_high_eta", -999.0},
 
-  dblValCuts["z_de_low"] = -999.0; 
-  dblValCuts["z_de_high"] = -999.0; 
-  dblValCuts["z_tr_low"] = -999.0; 
-  dblValCuts["z_tr_high"] = -999.0; 
+		{"nSig_pi_low",  -999.0},
+		{"nSig_pi_high", -999.0},
+		{"nSig_ka_low",  -999.0},
+		{"nSig_ka_high", -999.0},
+		{"nSig_pr_low",  -999.0},
+		{"nSig_pr_high", -999.0},
 
-  dblValCuts["m2_pi_low"] = -999.0; 
-  dblValCuts["m2_pi_high"] = -999.0; 
-  dblValCuts["m2_ka_low"] = -999.0; 
-  dblValCuts["m2_ka_high"] = -999.0; 
-  dblValCuts["m2_de_low"] = -999.0; 
-  dblValCuts["m2_de_high"] = -999.0; 
-  dblValCuts["m2_tr_low"] = -999.0; 
-  dblValCuts["m2_tr_high"] = -999.0; 
+		{"z_de_low",  -999.0},
+		{"z_de_high", -999.0},
+		{"z_tr_low",  -999.0},
+		{"z_tr_high", -999.0},
 
-  dblValCuts["yCM_norm_pi_low"] = -999.0;
-  dblValCuts["yCM_norm_pi_high"] = -999.0;
-  dblValCuts["pt_norm_pi_low"] = -999.0; 
-  dblValCuts["pt_norm_pi_high"] = -999.0; 
-  dblValCuts["yCM_yExt_pi_low"] = -999.0;
-  dblValCuts["yCM_yExt_pi_high"] = -999.0;
-  dblValCuts["pt_yExt_pi_low"] = -999.0;
-  dblValCuts["pt_yExt_pi_high"] = -999.0;
+		{"m2_pi_low",  -999.0},
+		{"m2_pi_high", -999.0},
+		{"m2_ka_low",  -999.0},
+		{"m2_ka_high", -999.0},
+		{"m2_de_low",  -999.0},
+		{"m2_de_high", -999.0},
+		{"m2_tr_low",  -999.0},
+		{"m2_tr_high", -999.0},
 
-  dblValCuts["yCM_norm_ka_low"] = -999.0;
-  dblValCuts["yCM_norm_ka_high"] = -999.0;
-  dblValCuts["pt_norm_ka_low"] = -999.0; 
-  dblValCuts["pt_norm_ka_high"] = -999.0; 
-  dblValCuts["yCM_yExt_ka_low"] = -999.0;
-  dblValCuts["yCM_yExt_ka_high"] = -999.0;
-  dblValCuts["pt_yExt_ka_low"] = -999.0;
-  dblValCuts["pt_yExt_ka_high"] = -999.0;
+		{"yCM_norm_pi_low",  -999.0},
+		{"yCM_norm_pi_high", -999.0},
+		{"pt_norm_pi_low",   -999.0},
+		{"pt_norm_pi_high",  -999.0},
+		{"yCM_yExt_pi_low",  -999.0},
+		{"yCM_yExt_pi_high", -999.0},
+		{"pt_yExt_pi_low",   -999.0},
+		{"pt_yExt_pi_high",  -999.0},
 
-  dblValCuts["yCM_norm_pr_low"] = -999.0;
-  dblValCuts["yCM_norm_pr_high"] = -999.0;
-  dblValCuts["pt_norm_pr_low"] = -999.0; 
-  dblValCuts["pt_norm_pr_high"] = -999.0; 
-  dblValCuts["yCM_yDep_pr_low"] = -999.0;
-  dblValCuts["yCM_yDep_pr_high"] = -999.0;
-  dblValCuts["pt_yDep_pr_low"] = -999.0; 
-  dblValCuts["pt_yDep_pr_high"] = -999.0; 
-  dblValCuts["yCM_yExt_pr_low"] = -999.0;
-  dblValCuts["yCM_yExt_pr_high"] = -999.0;
-  dblValCuts["pt_yExt_pr_low"] = -999.0;
-  dblValCuts["pt_yExt_pr_high"] = -999.0;
-  dblValCuts["yCM_ySym_pr_low"] = -999.0;
-  dblValCuts["yCM_ySym_pr_high"] = -999.0;
-  dblValCuts["pt_ySym_pr_low"] = -999.0;
-  dblValCuts["pt_ySym_pr_high"] = -999.0;
-  dblValCuts["yCM_yFor_pr_low"] = -999.0;
-  dblValCuts["yCM_yFor_pr_high"] = -999.0;
-  dblValCuts["pt_yFor_pr_low"] = -999.0;
-  dblValCuts["pt_yFor_pr_high"] = -999.0;
-  dblValCuts["yCM_alt_pr_low"] = -999.0;
-  dblValCuts["yCM_alt_pr_high"] = -999.0;
-  dblValCuts["pt_alt_pr_low"] = -999.0;
-  dblValCuts["pt_alt_pr_high"] = -999.0;
+		{"yCM_norm_ka_low",  -999.0},
+		{"yCM_norm_ka_high", -999.0},
+		{"pt_norm_ka_low",   -999.0},
+		{"pt_norm_ka_high",  -999.0},
+		{"yCM_yExt_ka_low",  -999.0},
+		{"yCM_yExt_ka_high", -999.0},
+		{"pt_yExt_ka_low",   -999.0},
+		{"pt_yExt_ka_high",  -999.0},
 
-  dblValCuts["yCM_norm_de_low"] = -999.0;
-  dblValCuts["yCM_norm_de_high"] = -999.0;
-  dblValCuts["pt_norm_de_low"] = -999.0; 
-  dblValCuts["pt_norm_de_high"] = -999.0; 
+		{"yCM_norm_pr_low",  -999.0},
+		{"yCM_norm_pr_high", -999.0},
+		{"pt_norm_pr_low",   -999.0},
+		{"pt_norm_pr_high",  -999.0},
+		{"yCM_yDep_pr_low",  -999.0},
+		{"yCM_yDep_pr_high", -999.0},
+		{"pt_yDep_pr_low",   -999.0},
+		{"pt_yDep_pr_high",  -999.0},
 
-  dblValCuts["yCM_norm_tr_low"] = -999.0;
-  dblValCuts["yCM_norm_tr_high"] = -999.0;
-  dblValCuts["pt_norm_tr_low"] = -999.0; 
-  dblValCuts["pt_norm_tr_high"] = -999.0; 
+		{"yCM_yExt_pr_low",  -999.0},
+		{"yCM_yExt_pr_high", -999.0},
+		{"pt_yExt_pr_low",   -999.0},
+		{"pt_yExt_pr_high",  -999.0},
+		{"yCM_ySym_pr_low",  -999.0},
+		{"yCM_ySym_pr_high", -999.0},
+		{"pt_ySym_pr_low",   -999.0},
+		{"pt_ySym_pr_high",  -999.0},
 
-  dblValCuts["KT_pdt_low"] = -999.0;
-  dblValCuts["KT_pdt_high"] = -999.0;
+		{"yCM_yFor_pr_low",  -999.0},
+		{"yCM_yFor_pr_high", -999.0},
+		{"pt_yFor_pr_low",   -999.0},
+		{"pt_yFor_pr_high",  -999.0},
+		{"yCM_alt_pr_low",   -999.0},
+		{"yCM_alt_pr_high",  -999.0},
+		{"pt_alt_pr_low",    -999.0},
+		{"pt_alt_pr_high",   -999.0},
+
+		{"yCM_norm_de_low",  -999.0},
+		{"yCM_norm_de_high", -999.0},
+		{"pt_norm_de_low",   -999.0},
+		{"pt_norm_de_high",  -999.0},
+		
+		{"yCM_norm_tr_low",  -999.0},
+		{"yCM_norm_tr_high", -999.0},
+		{"pt_norm_tr_low",   -999.0},
+		{"pt_norm_tr_high",  -999.0},
+		
+		{"KT_pdt_low",  -999.0},
+		{"KT_pdt_high", -999.0},};
 }
 
 void ConfigReader::setAllCuts()
@@ -396,3 +400,34 @@ void ConfigReader::printAll()
 		<< std::endl;
     }
 }// End function printAll()
+
+void ConfigReader::checkForNonSetKeys()
+{
+  std::map<std::string, int>::iterator intIt;
+  std::map<std::string, double>::iterator dblIt;
+  std::vector<std::string> nonSetKeys;
+
+  for (intIt = intValCuts.begin(); intIt != intValCuts.end(); intIt++)
+    {
+      if (intIt->second == -999) nonSetKeys.push_back(intIt->first);
+    }
+
+  for (dblIt = dblValCuts.begin(); dblIt != dblValCuts.end(); dblIt++)
+    {
+      if (dblIt->second == -999) nonSetKeys.push_back(dblIt->first);
+    }
+
+  if (nonSetKeys.size() == 0)
+    {
+      std::cout << "All known keys are set." << std::endl;
+    }
+  else
+    {
+      std::cout << "These known keys were never set:" << std::endl;
+
+      for (unsigned int i = 0; i < nonSetKeys.size(); i++)
+	{
+	  std::cout << nonSetKeys.at(i) << std::endl;
+	}
+    }
+}// End function checkForNonSetKeys()
