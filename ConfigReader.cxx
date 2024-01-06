@@ -328,7 +328,7 @@ void ConfigReader::read(std::string fileName)
 	      std::getline(valueStream, subString, ',');
 	      try
 		{ 
-		  UInt_t triggerValue = (UInt_t)std::atoi(subString.c_str()); 
+		  UInt_t triggerValue = static_cast<UInt_t>(std::atoi(subString.c_str())); 
 		  triggers.push_back(triggerValue);
 		}
 	      catch (...)
@@ -343,7 +343,7 @@ void ConfigReader::read(std::string fileName)
 	{
 	  try
 	    { 
-	      UInt_t triggerValue = (UInt_t)std::atoi(value.c_str()); 
+	      UInt_t triggerValue = static_cast<UInt_t>(std::atoi(value.c_str())); 
 	      triggers.push_back(triggerValue); 
 	    }
 	  catch (...)
