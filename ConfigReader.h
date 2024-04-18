@@ -35,6 +35,7 @@ class ConfigReader
   Int_t epdA_outer_row;
   Int_t epdB_inner_row;
   Int_t epdB_outer_row;
+  Int_t nSig_pr_variation;
   Double_t sqrt_s_NN;
   Double_t order_n;
   Double_t order_m;

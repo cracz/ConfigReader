@@ -8,18 +8,19 @@
 //manner in which the two maps are initialized below.
 void ConfigReader::initialize()
 {
-  intValCuts = {{"fixed_target",   -999},
-		{"epd_max_weight", -999},
-		{"nHits",          -999},
-		{"nHits_dEdx",     -999},
-		{"m_nHits",        -999},
-		{"m_nHits_dEdx",   -999},
-		{"min_tracks",     -999},
-		{"shift_terms",    -999},
-		{"epdA_inner_row", -999},
-		{"epdA_outer_row", -999},
-		{"epdB_inner_row", -999},
-		{"epdB_outer_row", -999}};
+  intValCuts = {{"fixed_target",    -999},
+		{"epd_max_weight",  -999},
+		{"nHits",           -999},
+		{"nHits_dEdx",      -999},
+		{"m_nHits",         -999},
+		{"m_nHits_dEdx",    -999},
+		{"min_tracks",      -999},
+		{"shift_terms",     -999},
+		{"epdA_inner_row",  -999},
+		{"epdA_outer_row",  -999},
+		{"epdB_inner_row",  -999},
+		{"epdB_outer_row",  -999},
+		{"nSig_pr_variation",-999}};
 
 
   dblValCuts = {{"sqrt_s_NN",     -999.0},
@@ -140,6 +141,7 @@ void ConfigReader::setAllCuts()
   epdA_outer_row = intValCuts["epdA_outer_row"];
   epdB_inner_row = intValCuts["epdB_inner_row"];
   epdB_outer_row = intValCuts["epdB_outer_row"];
+  nSig_pr_variation = intValCuts["nSig_pr_variation"];
 
   sqrt_s_NN = dblValCuts["sqrt_s_NN"];
   order_n = dblValCuts["order_n"]; 
